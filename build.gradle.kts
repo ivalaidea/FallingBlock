@@ -39,6 +39,6 @@ tasks.withType<ShadowJar> {
 configure<BukkitPluginDescription> {
     name = project.name
     version = project.version.toString()
-    main = "sample.Main" // TODO JavaPlugin を継承したクラスとパッケージを入力する
+    main = "com.github.idea.plugin.fallingblock.Main"
     apiVersion = "1.16"
 }
