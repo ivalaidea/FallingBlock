@@ -7,6 +7,7 @@ class Main : JavaPlugin() {
     companion object {
         internal lateinit var plugin: JavaPlugin
         var isEnable = false
+        var quantity = 1
     }
 
     init {
@@ -17,10 +18,12 @@ class Main : JavaPlugin() {
         CommandCreator.register()
         runTaskTimer(1 * 20, async = false) {
             if (isEnable) {
-                server.onlinePlayers.forEach {
-                    val location = it.location.block.location.add((-10..10).random().toDouble(), 20.0, (-10..10).random().toDouble())
-                    val material = Material.values().filter(Material::isBlock).random()
-                    it.world.spawnFallingBlock(location, material.createBlockData())
+                server.onlinePlayers.forEach { player ->
+                    repeat(quantity) {
+                        val location = player.location.block.location.add((-10..10).random().toDouble(), 20.0, (-10..10).random().toDouble())
+                        val material = Material.values().filter(Material::isBlock).random()
+                        player.world.spawnFallingBlock(location, material.createBlockData())
+                    }
                 }
             }
         }
