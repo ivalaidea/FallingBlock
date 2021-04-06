@@ -41,4 +41,5 @@ configure<BukkitPluginDescription> {
     version = project.version.toString()
     main = "com.github.idea.plugin.fallingblock.Main"
     apiVersion = "1.16"
+    author = "ivalaidea"
 }
