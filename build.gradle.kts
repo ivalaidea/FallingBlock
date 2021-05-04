@@ -6,7 +6,7 @@ plugins {
     kotlin("jvm") version "1.4.32"
     id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
     id("com.github.johnrengelman.shadow") version "6.1.0"
-    id("net.minecrell.plugin-yml.bukkit") version "0.3.0"
+    id("net.minecrell.plugin-yml.bukkit") version "0.4.0"
 }
 
 version = "1.0.0"
